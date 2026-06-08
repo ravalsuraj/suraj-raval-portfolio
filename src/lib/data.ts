@@ -28,8 +28,8 @@ export const site = {
   ],
   location: "Mumbai, Maharashtra, India",
   email: "suraj.raval@audibene.de",
-  // GitHub Pages project URL. Change to your custom domain if you add one.
-  url: "https://ravalsuraj.github.io/suraj-raval-portfolio",
+  // GitHub Pages user-site URL. Change to your custom domain if you add one.
+  url: "https://ravalsuraj.github.io",
   // Drop a real photo in /public (e.g. profile.jpg) and point this at it.
   avatar: "/profile.svg",
   avatarAlt: "Portrait of Suraj Raval",
