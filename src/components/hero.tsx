@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, FileText, MapPin } from "lucide-react";
 
 import { site } from "@/lib/data";
+import { withBasePath } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
 export function Hero() {
@@ -87,7 +88,7 @@ export function Hero() {
               />
               <div className="relative aspect-[4/5] w-[260px] overflow-hidden rounded-xl border border-border bg-muted shadow-sm sm:w-[300px] lg:w-[340px]">
                 <Image
-                  src={site.avatar}
+                  src={withBasePath(site.avatar)}
                   alt={site.avatarAlt}
                   fill
                   priority

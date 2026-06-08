@@ -2,6 +2,9 @@ import type { MetadataRoute } from "next";
 
 import { navItems, site } from "@/lib/data";
 
+// Required for `output: export` (GitHub Pages) — emit a static sitemap.xml.
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [...navItems.map((n) => n.href), "/blog"];
   const unique = Array.from(new Set(routes));

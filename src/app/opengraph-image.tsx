@@ -2,7 +2,9 @@ import { ImageResponse } from "next/og";
 
 import { site } from "@/lib/data";
 
-export const runtime = "edge";
+// Required for `output: export` (GitHub Pages) — generate the OG image at build.
+export const dynamic = "force-static";
+
 export const alt = `${site.name} — ${site.title}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
