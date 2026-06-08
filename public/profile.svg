@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000" fill="none">
+  <rect width="800" height="1000" fill="#e7e7ea"/>
+  <rect width="800" height="1000" fill="url(#g)"/>
+  <!-- simple friendly avatar silhouette -->
+  <circle cx="400" cy="410" r="150" fill="#c3c3c9"/>
+  <path d="M180 880c0-138 98-250 220-250s220 112 220 250v120H180V880Z" fill="#c3c3c9"/>
+  <!-- subtle smile arc -->
+  <path d="M352 430c14 18 82 18 96 0" stroke="#a6a6ad" stroke-width="10" stroke-linecap="round" fill="none"/>
+  <g fill="#9a9aa1">
+    <circle cx="360" cy="392" r="11"/>
+    <circle cx="440" cy="392" r="11"/>
+  </g>
+  <text x="400" y="610" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="22" letter-spacing="3" fill="#8a8a91">YOUR PHOTO HERE</text>
+  <text x="400" y="648" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="1" fill="#a6a6ad">replace /public/profile.svg</text>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="800" y2="1000" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#eeeef0"/>
+      <stop offset="1" stop-color="#dededf"/>
+    </linearGradient>
+  </defs>
+</svg>

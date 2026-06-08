@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 8%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 8%;
+
+    --primary: 240 10% 8%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 5% 96%;
+    --secondary-foreground: 240 6% 18%;
+
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 4% 42%;
+
+    --accent: 240 5% 95%;
+    --accent-foreground: 240 6% 12%;
+
+    --border: 240 6% 90%;
+    --input: 240 6% 90%;
+    --ring: 240 10% 8%;
+
+    --radius: 0.6rem;
+  }
+
+  .dark {
+    --background: 240 10% 5%;
+    --foreground: 0 0% 95%;
+
+    --card: 240 9% 7%;
+    --card-foreground: 0 0% 95%;
+
+    --primary: 0 0% 95%;
+    --primary-foreground: 240 10% 6%;
+
+    --secondary: 240 5% 12%;
+    --secondary-foreground: 0 0% 92%;
+
+    --muted: 240 5% 12%;
+    --muted-foreground: 240 5% 60%;
+
+    --accent: 240 5% 14%;
+    --accent-foreground: 0 0% 95%;
+
+    --border: 240 5% 15%;
+    --input: 240 5% 16%;
+    --ring: 0 0% 80%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Subtle dotted grid background texture used on hero / page tops */
+  .bg-grid {
+    background-image: radial-gradient(
+      hsl(var(--border)) 1px,
+      transparent 1px
+    );
+    background-size: 22px 22px;
+    background-position: -1px -1px;
+  }
+
+  /* Mono eyebrow label — the "engineering" signature */
+  .eyebrow {
+    @apply font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground;
+  }
+
+  ::selection {
+    background: hsl(var(--foreground));
+    color: hsl(var(--background));
+  }
+}
+
+/* Focus ring scoped to keyboard users */
+@layer base {
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+}
+
+/* ---------------------------------------------------------------- */
+/* Print styles — ATS-friendly single column resume                  */
+/* ---------------------------------------------------------------- */
+@media print {
+  @page {
+    size: A4;
+    margin: 14mm 16mm;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 10.5pt;
+    line-height: 1.4;
+  }
+
+  /* Hide all chrome, only the resume sheet prints */
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .resume-sheet {
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+
+  a {
+    color: #000000 !important;
+    text-decoration: none !important;
+  }
+
+  /* Avoid breaking entries across pages */
+  .avoid-break {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  h1,
+  h2,
+  h3 {
+    color: #000000 !important;
+  }
+}
+
+.print-only {
+  display: none;
+}
